@@ -29,11 +29,11 @@ async function login(){
         const data = await response.json();
         console.log('Success:', data);
 
-            result.innerHTML = `
-                <h2>Login Success</h2>
-                <p>You may now change your username</p>
-                <a href="changeUsername.html">Change Username</a>
-            `;
+        result.innerHTML = `
+            <h2>Login Success</h2>
+            <p>You may now change your username</p>
+            <a href="changeUsername.html">Change Username</a>
+        `;
 
         return data;
     }
