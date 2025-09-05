@@ -20,28 +20,14 @@ async function viewPet(){
         const data = await response.json();
         console.log('Success:', data);
         
-        result.innerHTML = '';
+        result.innerHTML = `
+            <ul class="pet-list">
+                ${data.pets.map(pet => `<li>Pet ID:${pet._id} Name:${pet.name}(${pet.type})</li>`).join('')}
+            </ul>
 
-        if (data.length === 0) {
-            result.innerHTML = `
-                <h2>No Pets Found</h2>`;
-        }
-
-        let petsList = '<h2>Your Pets</h2><ul>';
-                
-                data.forEach(pet => {
-                    petsList += `
-                        <li>
-                            <strong>Name:</strong> ${pets.id || 'N/A'}<br>
-                            <strong>Type:</strong> ${pet.name || 'N/A'}<br>
-                            <strong>Pet ID:</strong> ${pet.type || 'N/A'}<br>
-                        </li>
-                        <hr>
-                    `;
-                });
-                
-                petsList += '</ul>';
-                result.innerHTML = petsHTML;
+            <p>Hey, would you like to look at other people's pets?</p>
+            <a href="allPets.html">All Pets</a>
+        `;
 
         return data;
     }
