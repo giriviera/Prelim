@@ -46,8 +46,9 @@ async function viewAllPets(){
             console.log('Success:', petsData);
 
             result.innerHTML = `
+                <h2>Hala pano mo yan nagawa? Hacker na pala si bro</h2>
                 <ul class="pet-list">
-                    ${petsData.pets.map(pet => `<li>Pet ID:${pet._id} Name:${pet.name}(${pet.type}) - Owner ID:${pet.owner}</li>`).join('')}
+                    ${petsData.pets.map(pet => `<li>Pet ID:${pet._id} Name:${pet.name}(${pet.type}) - Owner ID:${pet.owner._id} Name:${pet.owner.username}</li>`).join('')}
                 </ul>
             `;
         }
