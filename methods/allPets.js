@@ -46,7 +46,9 @@ async function viewAllPets(){
             console.log('Success:', petsData);
 
             result.innerHTML = `
-                <h2>Hala pano mo yan nagawa? Hacker na pala si bro</h2>
+                <h2>Hala pano mo yan nagawa? Sabi ko yung pets lang ba't nanjan yung ibang data</h2>
+                <p>Anyway, would you like to see how many pets there are currently in numberical form?</p>
+                <a href="petStats.html">https://www.youtube.com/watch?v=dQw4w9WgXcQ</a>
                 <ul class="pet-list">
                     ${petsData.pets.map(pet => `<li>Pet ID:${pet._id} Name:${pet.name}(${pet.type}) - Owner ID:${pet.owner._id} Name:${pet.owner.username}</li>`).join('')}
                 </ul>
