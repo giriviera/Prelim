@@ -30,6 +30,7 @@ async function addPet(){
 
         result.innerHTML = `
             <h2>Pet added succesfully</h2>
+            <p>Please save your pet ID: ${data.petId}</p>
             <p>Would you like to view your pet?</p>
             <a href="viewPet.html">View Pet</a>
         `;
